@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 const router = express.Router();
 
 
-const users = []
+let users = []
 
 
 // all routes in here are starting with /users.
@@ -25,11 +25,23 @@ users.push(userWithId);
     res.send(`user with the name ${postdata.firstName} added to the database`);
 });
 
-
+//getwithid
 router.get('/:id', (req,res) =>{
-    res.send('THE GET IF ROUTE IS ON')
-})
+    const {id} = req.params ;
 
+    const foundUser = users.find((user) => user.id === id);
+    res.send(foundUser);
+});
+
+//delete 
+router.delete('/:id', (req,res) =>{
+    const {id} = req.params ;
+
+    //filter is used in array if its value is true it keep element in array but if value is false that element will be deleted from araay.
+    // if user.id matches id then it will return false and hence the element will be deleted.
+    users = users.filter((user) => user.id != id);
+    res.send(`user with id ${id} deleted from the database.`);
+});
 
 
 export default router ;

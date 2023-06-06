@@ -1,6 +1,6 @@
-# Simple REST API using Node.js and MongoDB
+# Simple REST API using Node.js and POSTMAN
 
-This is a simple README file that provides instructions on setting up and using a REST API using Node.js
+This is a simple README file that provides information about  a REST API using Node.js
 as the backend server and Postman as the tool for testing and interacting with the API.
 
 #  Prerequisites
